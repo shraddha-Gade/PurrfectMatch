@@ -9,3 +9,6 @@ def cat_breeds(request):
 
 def dog_breeds(request):
     return render(request, 'dog_breeds.html')
+
+def sign_up(request):
+    return render(request, 'sign_up.html')

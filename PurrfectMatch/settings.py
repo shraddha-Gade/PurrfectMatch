@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'pet_rehome.apps.PetRehomeConfig',
+    'sign_up.apps.SignUpConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -84,6 +85,9 @@ DATABASES = {
         'HOST' : 'localhost'
     }
 }
+
+
+
 
 
 # Password validation

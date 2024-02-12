@@ -22,6 +22,7 @@ from pet_rehome import views
 
 urlpatterns = [
     path('', include('Home_page.urls')), 
+    path('sign_up/', include('sign_up.urls')), 
     path('add_pet/', include('pet_rehome.urls')),
     path('admin/', admin.site.urls),
 ]
