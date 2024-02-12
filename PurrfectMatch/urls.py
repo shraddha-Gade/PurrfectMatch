@@ -21,10 +21,10 @@ from django.conf.urls.static import static
 from pet_rehome import views
 
 urlpatterns = [
-    path('' , views.add_pet , name = 'add_pet'),
+    path('', include('Home_page.urls')), 
+    path('add_pet/', include('pet_rehome.urls')),
     path('admin/', admin.site.urls),
-    path('' , include('pet_rehome.urls')),
-    
 ]
+
 if settings.DEBUG :
     urlpatterns += static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)

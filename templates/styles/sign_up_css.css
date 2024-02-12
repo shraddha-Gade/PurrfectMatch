@@ -1,0 +1,64 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2F0JTIwYW5kJTIwZG9nfGVufDB8fDB8fHww');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.box {
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 35px 40px 35px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.774);
+
+}
+
+.box label option {
+    display: block;
+    padding-bottom: 20px;
+}
+
+.row {
+    padding: 4px;
+}
+
+.h3 {
+    text-decoration: solid;
+    text-align: center;
+    padding-bottom: 20px;
+    color: #3C0753;
+}
+
+ul {
+    list-style-type: none;
+    margin: auto;
+    padding: 5px;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 20px;
+    text-align: left;
+    text-decoration: underline;
+}
+
+li a:hover {
+    background-color: rgb(174, 136, 209);
+}
