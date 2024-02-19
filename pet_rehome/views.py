@@ -1,12 +1,16 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Cat , Dog
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def add_cat(request):
     return render(request, 'add_cat.html')
 
+@login_required
 def add_dog(request):
     return render(request, 'add_dog.html')
+
 
 def submitted_cat(request):
     if request.method == 'POST':

@@ -2,6 +2,10 @@ from django.shortcuts import render ,redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .models import User
+from django.contrib.auth.views import LogoutView
+
+# Logout view
+logout_view = LogoutView.as_view(next_page = 'home')
 
 # Create your views here.
 def sign_up(request):
@@ -11,6 +15,7 @@ def login_user(request):
     return render(request, 'login_form.html')
 
 def login_view(request):
+    print("login_view view")
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
