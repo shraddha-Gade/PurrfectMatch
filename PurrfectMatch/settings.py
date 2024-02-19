@@ -45,10 +45,10 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -135,5 +135,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+#AUTHENTICATION_BACKENDS = [
+    #'myapp.backends.MyCustomBackend',  # Path to your custom authentication backend
+#]
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

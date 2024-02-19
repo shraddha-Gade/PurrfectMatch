@@ -1,4 +1,5 @@
 from django.shortcuts import render ,redirect
+from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .models import User
 
@@ -6,6 +7,25 @@ from .models import User
 def sign_up(request):
     return render(request, 'sign_up.html')
 
+def login_user(request):
+    return render(request, 'login_form.html')
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page
+            messages.success(request, 'You have successfully logged in.')
+            return redirect('home')
+        else:
+            # Return an error message or render the login page with an error
+            return render(request, 'login_form.html', {'error_message': 'Invalid credentials'})
+    else:
+        # Render the login page
+        return render(request, 'login_form.html')
 
 def signup_submit(request):
     if request.method == 'POST':

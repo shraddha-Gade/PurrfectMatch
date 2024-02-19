@@ -19,10 +19,13 @@ from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
 from pet_rehome import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', include('Home_page.urls')), 
-    path('sign_up/', include('sign_up.urls')), 
+    path('sign_up/', include('sign_up.urls')),
+    #path('sign_up/', include('django.contrib.auth.urls')), 
+    path('login/', auth_views.LoginView.as_view(template_name='login_form.html'), name='login'),
     path('add_pet/', include('pet_rehome.urls')),
     path('admin/', admin.site.urls),
 ]
