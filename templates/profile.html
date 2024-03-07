@@ -1,13 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-</head>
-<body>
-    <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
-    <p>Contact Number: {{ user.contact_no }}</p>
-    <p>Email: {{ user.email }}</p>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>PurrfectMatch</title>
+        <!-- Purrfectlogo lol-->
+        <link rel="icon" type="image/x-icon" href="C:\Users\Apurva Bhaskare\OneDrive\Documents\TYBCS\Project\Test\Home_page\startbootstrap-full-width-pics-gh-pages\assets\white_logo-removebg-preview.png" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet"/>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    </head>
+    <style>
+        body,html{
+            background-color: #030637;
+            font-size: 15px;
+        }
+        .transparent-navbar {
+        background-color: transparent;
+        }
+        .transparent-navbar .navbar-nav .nav-link {
+        color: white;
+        }
+        .transparent-navbar .dropdown-menu {
+        background-color: rgba(255,255,255,0.8);
+        }
+        .transparent-navbar .dropdown-menu .dropdown-item {
+        color: black;
+        }
+        .dropdown-item:hover {
+        background-color: #720455; 
+        color: #000; 
+        }
+        .hidden{
+            display: none;
+            align-content: center;
+        }
+        /* Define default styles for the toggler */
+        .navbar-toggler {
+            color: white; /* Default color */
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) 
+        {
+            /* Change toggler color to purple */
+            .navbar-toggler {
+                background-color: purple;
+            }
+            
+            /* Shift elements downward */
+            .navbar-nav {
+                margin-top: 100px; /* Adjust as needed */
+            }
+        }
+        
+        #userlabel{
+            border: 0px solid #03063727;
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 17px;
+            color: #030637;
+        }
+        #uservalues{
+            border: 1px solid #03063727;
+            width: 400px;
+            padding: 10px;
+            border-radius: 5px;
+            color: #030637;
+        }
+        span{
+            padding-right: 10px;  
+        }
+        .box{
+            border: 1px solid #030637;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #ffffffcd; 
+            flex: 1;
+        }
+        .h3{
+            border-bottom:1px solid #03063727;
+            padding-bottom: 20px;
+            color: #030637;
+            font-size: 26px;
+        }
+    </style>
+    <body>
+        <!-- Responsive navbar-->
+
+        <nav class="navbar navbar-expand-lg" style="background-image: url('assets/purple_header_final.jpg');height:100px;">
+            <div class="container">
+                <a class="navbar-brand" href="#!" style="color: white; font-size: 30px; margin-right: 0;">
+                    PurrfectMatch 
+                    <img src="assets\white_logo-removebg-preview.png" style="height: 30px; margin-top: 0;">
+                </a>
+                <button class="navbar-toggler p-1 bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="block">
+                       <div class="cta">
+                          <div class="toggle-btn type17"></div>
+                       </div>
+                    </div>
+                 </button>                
+                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="petsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Pets</a>
+                            <div class="dropdown-menu" aria-labelledby="petsDropdown">
+                                <a class="dropdown-item" href="#">Cats</a>
+                                <a class="dropdown-item" href="#">Dogs</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Pets Services</a>
+                            <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <a class="dropdown-item" href="#">Grooming</a>
+                                <a class="dropdown-item" href="#">Adoption</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="breedsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Breeds</a>
+                            <div class="dropdown-menu" aria-labelledby="breedsDropdown">
+                                <a class="dropdown-item" href="C:\Users\Apurva Bhaskare\OneDrive\Documents\TYBCS\Project\Test\Home_page\startbootstrap-full-width-pics-gh-pages\Cat_breeds.html">Cat Breeds</a>
+                                <a class="dropdown-item" href="C:\Users\Apurva Bhaskare\OneDrive\Documents\TYBCS\Project\Test\Home_page\startbootstrap-full-width-pics-gh-pages\Dog_breeds.html">Dog Breeds</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="breedsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">List your Pets</a>
+                            <div class="dropdown-menu" aria-labelledby="breedsDropdown">
+                                <a class="dropdown-item" href="#">For Sale</a>
+                                <a class="dropdown-item" href="#">For Adoption</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="breedsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Login</a>
+                            <div class="dropdown-menu" aria-labelledby="breedsDropdown">
+                                <a class="dropdown-item" href="C:\Users\Apurva Bhaskare\OneDrive\Documents\TYBCS\Project\Test\Login_form\login_form.html">Login</a>
+                                <a class="dropdown-item" href="C:\Users\Apurva Bhaskare\OneDrive\Documents\TYBCS\Project\Test\Sign_up_form\public\Sign_up.html">Sign Up</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!--Add pet button-->
+        <br>
+        <div class="row justify-content-center">
+            <button type="button" class="btn btn-light" style="width: 230px; border-radius: 20px;" onclick="toggleOptions('petOptions')">
+                Add Pet +
+            </button>
+            <div id="petOptions" class="col-12 text-center hidden" style="padding-top: 10px;">
+                <button onclick="selectPet('cat')" class="btn btn" style="width: 130px; border-radius: 7px;background-color: #720455;color:white;">Cat</button>
+                <button onclick="selectPet('dog')" class="btn btn" style="width: 130px; border-radius: 7px;background-color: #720455;color:white;">Dog</button>
+            </div>
+            <script>
+            function toggleOptions(optionId) {
+                var option = document.getElementById(optionId);
+                option.classList.toggle("hidden");
+            }
+            
+            function selectPet(pet) {
+                if (pet === 'cat') {
+                    window.location.href = 'C:/Users/Apurva Bhaskare/OneDrive/Documents/TYBCS/Project/Test/Add_pet_form/add_pet_cat.html';
+                } else if (pet === 'dog') {
+                    window.location.href = 'C:/Users/Apurva Bhaskare/OneDrive/Documents/TYBCS/Project/Test/Add_pet_form/add_pet_dog.html';
+                }
+            }
+            </script>            
+        </div>
+        <br>
+
+        <!--Main body
+        <section class="py-1" style="padding: 10px; display: flex;">
+            <div class="box rounded" style="border: 1px solid #030637;border-radius: 5px;padding: 20px;background-color: #ffffffe5; flex: 1;">
+                <div class="h3" style="border-bottom:1px solid #03063727;padding-bottom: 20px;color: #030637;">About me</div><br>
+                <label id="userlabel">Name </label>
+                <label id="uservalues">{{ user.first_name }} {{ user.last_name }}</label><br><br>
+                <label id="userlabel">Contact Number</label>
+                <label id="uservalues">{{ user.contact_no }}</label><br><br>
+                <label id="userlabel">Email</label>
+                <label id="uservalues">{{ user.email }}</label><br><br>
+            </div>
+            <div class="box rounded" style="background-image: url(https://cdnph.upi.com/svc/sv/upi_com/6561655819667/2022/1/abc688ef748ac74f42f10ef79fea6196/Pets-help-owners-stay-active-manage-stress.jpg); flex: 1; background-position: center; background-size: cover;"></div>
+        </section>
+
+        <div class="row justify-content-end" style="padding: 20px;">
+            <p style="color:white;text-align: end;font-size:13px;">Page {{ page_number }} of {{ total_pages }}</p>
+            <a href="{% url 'next_page' %}" class="btn btn-light" style="width: 150px; border-radius: 10px;color:#720455;">Next Page</a>
+        </div>-->
+        <section class="py-1" style="padding: 10px; display: flex;">
+                <div class="box rounded">
+                    <div class="h3">About me</div><br>
+                    <label id="userlabel"><span class="bi bi-person-circle"></span>Name</label>
+                    <label id="uservalues">{{ user.first_name }} {{ user.last_name }}</label><br><br>
+                    <label id="userlabel"><span class="bi bi-telephone-fill"></span>Contact Number</label>
+                    <label id="uservalues">{{ user.contact_no }}</label><br><br>
+                    <label id="userlabel"><span class="bi bi-envelope"></span>Email</label>
+                    <label id="uservalues">{{ user.email }}</label><br><br>
+                </div>
+        </section>
+
+        <div class="row justify-content-end" style="padding: 20px;">
+            <p style="color:white;text-align: end;font-size:13px;">Page {{ page_number }} of {{ total_pages }}</p>
+            <a href="{% url 'next_page' %}" class="btn btn-light" style="width: 150px; border-radius: 10px;color:#720455;">Next Page</a>
+        </div>
+        
+
+        <!-- Footer-->
+        <footer class="py-2" style="background-color:#720455;color: #fff; margin: 0;">
+            <div class="container-fluid" style="margin: 0;">
+                <div class="row" style="padding: 20px;">
+                    <div class="col-md-3">
+                        <p><b>RESOURCES</b></p>
+                        <a href="#" style="color: white;text-decoration: none;">FAQs</a><br>
+                        <a href="#" style="color: white;text-decoration: none;">Contact Us</a><br><br>
+                    </div>
+                    <div class="col-md-3">
+                        <p><b>ABOUT DOGS & PUPPIES</b></p>
+                        <a href="#" style="color: white;text-decoration: none;">All About Dogs & Puppies</a><br>
+                        <a href="#" style="color: white;text-decoration: none;">Dog Adoption</a><br>
+                        <a href="#" style="color: white;text-decoration: none;">Dog Breeds</a><br>
+                        <a href="#" style="color: white;text-decoration: none;">Feeding Your Dog</a><br>
+                        <a href="#" style="color: white;text-decoration: none;">Dog Behavior</a><br>
+                    </div>
+                    <div class="col-md-3">
+                        <p><b>ABOUT CATS & KITTENS</b></p>
+                        <a href="#" style="color: white;text-decoration: none;">All About Cats & Kittens</a><br>
+                        <a href="#" style="color: white;text-decoration: none;">Cat Adoption</a><br>
+                        <a href="#" style="color: white;text-decoration: none;">Cat Breeds</a><br>
+                        <a href="#" style="color: white;text-decoration: none;">Feeding Your Cat</a><br>
+                        <a href="#" style="color: white;text-decoration: none;">Cat Behavior</a><br>
+                    </div>
+                </div>
+            </div><br>
+            <div class="container-fluid" style="margin: 0;">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="m-0 text-left text-white">&copy; 2024-2025 Purrfect Pet Services Private Limited. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-end" style="margin: 0;align-self: end;">
+                        <button type="button" class="btn btn-link btn-floating mx-1" style="color: white;">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button type="button" class="btn btn-link btn-floating mx-1" style="color: white;">
+                            <i class="fab fa-google"></i>
+                        </button>
+                        <button type="button" class="btn btn-link btn-floating mx-1" style="color: white;">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                        <button type="button" class="btn btn-link btn-floating mx-1" style="color: white;">
+                            <i class="fab fa-github"></i>
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
