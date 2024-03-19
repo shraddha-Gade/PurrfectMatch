@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'PurrfectMatch.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pet_info',
+        'NAME': 'pet_database',
         'USER' : 'postgres',
         'PASSWORD' : 'g8a8d8e8',
         'HOST' : 'localhost'
@@ -108,6 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'sign_up.CustomUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

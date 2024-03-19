@@ -24,11 +24,11 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
-    #path('', include('Home_page.urls')), 
-    #path('sign_up/', include('sign_up.urls')),
-    #path('sign_up/', include('django.contrib.auth.urls')), 
-    path('', include('sign_up.urls')),
-    path('home/' , include('Home_page.urls')),
+    path('', include('Home_page.urls')), 
+    path('sign_up/', include('sign_up.urls')),
+    path('sign_up/', include('django.contrib.auth.urls')), 
+    #path('', include('sign_up.urls')),
+    #path('home/' , include('Home_page.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='login_form.html'), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('add_pet/', include('pet_rehome.urls')),

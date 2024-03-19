@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
-            model_name='user',
+            model_name='customuser',
             name='contact_no',
             field=models.CharField(),
         ),

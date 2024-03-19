@@ -1,7 +1,7 @@
 from django.shortcuts import render ,redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
-from .models import User
+#from .models import User
 from django.contrib.auth.views import LogoutView
 
 # Logout view

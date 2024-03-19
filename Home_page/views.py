@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from sign_up.models import User
+#from sign_up.models import User
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -14,14 +14,14 @@ def dog_breeds(request):
     return render(request, 'dog_breeds.html')
 
 
-
+'''
 @login_required
 def Myprofile(request):
     user = User.objects.get(id=request.user.id)
     context = {
         'user': user
     }
-    return render(request, 'profile.html', context)
+    return render(request, 'profile.html', context)'''
 
 def display_available(request):
     available_cats = Cat.objects.filter(is_available = True)

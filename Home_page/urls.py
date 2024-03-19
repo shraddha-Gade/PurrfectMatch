@@ -12,5 +12,5 @@ urlpatterns = [
     #path('sign_up', views.sign_up, name='sign_up'),
     #path('logout' , views.logout , name = 'logout'),
     #path('login' , views.login , name = 'login'),
-    path('profile' , views.Myprofile , name = 'profile'),
+    #path('profile' , views.Myprofile , name = 'profile'),
 ]
